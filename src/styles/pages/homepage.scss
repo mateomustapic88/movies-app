@@ -1,0 +1,143 @@
+@import "../variables";
+
+body {
+  background-color: $background-color;
+}
+
+.home-page {
+  padding: 20px;
+  min-height: 100vh;
+  color: $text-color;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  .category {
+    margin-bottom: 40px;
+    position: relative;
+
+    h2 {
+      color: $text-color;
+      margin-bottom: 15px;
+      font-size: 24px;
+      font-weight: bold;
+      padding-left: 10px;
+    }
+
+    .movie-list {
+      display: flex;
+      gap: 10px;
+      padding-bottom: 10px;
+
+      &.scrollable {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 15px;
+
+        &::-webkit-scrollbar {
+          height: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: #1f1f1f;
+          border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: $primary-color;
+          border-radius: 10px;
+          border: 2px solid #1f1f1f;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background-color: $hover-color;
+        }
+      }
+
+      .movie-card {
+        width: 180px;
+        flex-shrink: 0;
+        position: relative;
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #1f1f1f;
+        box-shadow: 0 2px 8px $shadow-color;
+        text-align: center;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 4px 12px $shadow-color;
+        }
+
+        img {
+          width: 100%;
+          height: 270px;
+          object-fit: cover;
+        }
+
+        .movie-title {
+          padding: 10px;
+          color: $text-color;
+          font-size: 14px;
+          font-weight: bold;
+          background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .movie-year {
+          font-size: 12px;
+          color: #aaa;
+        }
+
+        button {
+          background-color: transparent;
+          border: 1px solid $primary-color;
+          color: $primary-color;
+          padding: 5px;
+          border-radius: 4px;
+          font-size: 12px;
+          margin-top: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: $primary-color;
+            color: $text-color;
+          }
+        }
+      }
+    }
+
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $primary-color;
+      font-size: 2em;
+      cursor: pointer;
+      z-index: 5;
+
+      &.left {
+        left: 10px;
+      }
+
+      &.right {
+        right: 10px;
+      }
+
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-list {
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .movie-card {
+    width: 150px;
+  }
+}

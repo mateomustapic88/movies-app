@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Movie Application
 
-## Getting Started
+This is a movie application built as part of an assignment to demonstrate the use of modern web technologies, including **Next.js**, **TypeScript**, and **Sass** (CSS framework). The app fetches movie data from the **OMDB API** and includes features like searching, favoriting, and filtering movies. The app is responsive, optimized, and dockerized using **Docker Compose**.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Home Page
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Displays the following sections:
+  - **Newest Movies**
+  - **Top 3 Movies by Streaming Services**
+  - **Popular Movies**
+  - All horizontally scrollable
+  - Option to **favorite** movies and store them in **local storage**.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Most Watched Page
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Infinite scroll for movie lists.
+- Filters to sort movies by:
+  - **Release Year**
+  - **Poster Image**
 
-## Learn More
+### Movie Details Page
 
-To learn more about Next.js, take a look at the following resources:
+- Detailed information about each movie, including:
+  - **Banner Image**
+  - **Poster Image**
+  - **Title**
+  - **Description**
+  - **Score**
+  - **Genre**
+  - **Duration**
+  - **Country**
+  - **Cast**
+- Option to **favorite** or **unfavorite** movies directly from the movie details page.
+- The app reflects if the movie has already been favored elsewhere.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Navbar
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Present across all pages.
+- Contains a **search bar** for searching movies.
+- A **favorites dropdown** showing the list of favorited movies.
+- **Live search results** as the user types:
+  - Dropdown with selectable results (using arrow keys).
+  - Enter key redirects the user to the selected movie or the search results page.
 
-## Deploy on Vercel
+### Favorites Page (Bonus)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- A dedicated page showing all favorited movies.
+- Ability to **clear** all favorites from local storage.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Technologies Used
+
+- **Next.js** (framework)
+- **TypeScript** (strongly typed JavaScript)
+- **Sass** (CSS framework for styling)
+- **OMDB API** (for fetching movie data)
+- **Local Storage** (for managing favorites)
+
+## Installation
+
+### Prerequisites
+
+- **Node.js** version 18 or above.
+
+### Steps
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-repo/movie-app.git
+   cd movie-app
+   ```
+
+2. Install dependencies
+
+   ```sh
+   npm install
+   ```
+
+3. Run the app
+   ```sh
+   npm run dev
+   ```
+4. Enjoy!
