@@ -82,4 +82,6 @@ This is a movie application built as part of an assignment to demonstrate the us
    ```sh
    npm run dev
    ```
-4. Enjoy!
+4. Open app on http://localhost:3000/
+
+5. Enjoy!
